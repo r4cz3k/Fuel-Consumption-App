@@ -10,6 +10,9 @@
 		C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */; };
 		C16062EB2AF126E100D6B14B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062EA2AF126E100D6B14B /* Assets.xcassets */; };
 		C16062EE2AF126E100D6B14B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062ED2AF126E100D6B14B /* Preview Assets.xcassets */; };
+		C16062FA2AF1281400D6B14B /* CarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062F92AF1281400D6B14B /* CarsView.swift */; };
+		C16062FC2AF1288500D6B14B /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062FB2AF1288500D6B14B /* CarsViewModel.swift */; };
+		C16062FE2AF1288E00D6B14B /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062FD2AF1288E00D6B14B /* CarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +20,9 @@
 		C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionApp.swift; sourceTree = "<group>"; };
 		C16062EA2AF126E100D6B14B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C16062ED2AF126E100D6B14B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C16062F92AF1281400D6B14B /* CarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsView.swift; sourceTree = "<group>"; };
+		C16062FB2AF1288500D6B14B /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
+		C16062FD2AF1288E00D6B14B /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		C16062F42AF1273500D6B14B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C16062FD2AF1288E00D6B14B /* CarModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -77,6 +84,7 @@
 		C16062F52AF1274D00D6B14B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C16062FB2AF1288500D6B14B /* CarsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -84,6 +92,7 @@
 		C16062F62AF1275500D6B14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C16062F92AF1281400D6B14B /* CarsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,7 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16062FE2AF1288E00D6B14B /* CarModel.swift in Sources */,
 				C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */,
+				C16062FC2AF1288500D6B14B /* CarsViewModel.swift in Sources */,
+				C16062FA2AF1281400D6B14B /* CarsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
