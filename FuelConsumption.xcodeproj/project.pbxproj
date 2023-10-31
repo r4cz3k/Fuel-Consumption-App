@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */; };
-		C16062E92AF126E100D6B14B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062E82AF126E100D6B14B /* ContentView.swift */; };
 		C16062EB2AF126E100D6B14B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062EA2AF126E100D6B14B /* Assets.xcassets */; };
 		C16062EE2AF126E100D6B14B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062ED2AF126E100D6B14B /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +15,6 @@
 /* Begin PBXFileReference section */
 		C16062E32AF126E100D6B14B /* FuelConsumption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuelConsumption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionApp.swift; sourceTree = "<group>"; };
-		C16062E82AF126E100D6B14B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C16062EA2AF126E100D6B14B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C16062ED2AF126E100D6B14B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,9 +50,11 @@
 			isa = PBXGroup;
 			children = (
 				C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */,
-				C16062E82AF126E100D6B14B /* ContentView.swift */,
-				C16062EA2AF126E100D6B14B /* Assets.xcassets */,
+				C16062F62AF1275500D6B14B /* Views */,
+				C16062F52AF1274D00D6B14B /* ViewModels */,
+				C16062F42AF1273500D6B14B /* Models */,
 				C16062EC2AF126E100D6B14B /* Preview Content */,
+				C16062EA2AF126E100D6B14B /* Assets.xcassets */,
 			);
 			path = FuelConsumption;
 			sourceTree = "<group>";
@@ -65,6 +65,27 @@
 				C16062ED2AF126E100D6B14B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C16062F42AF1273500D6B14B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C16062F52AF1274D00D6B14B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C16062F62AF1275500D6B14B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +158,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C16062E92AF126E100D6B14B /* ContentView.swift in Sources */,
 				C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
