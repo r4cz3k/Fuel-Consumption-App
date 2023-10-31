@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct CarsView: View {
+    
+    @ObservedObject var carsViewModel: CarsViewModel = CarsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVStack{
+            ScrollView(showsIndicators: false){
+                ForEach(carsViewModel.cars){ car in
+                    
+                }
+            }
+        }
     }
 }
 
