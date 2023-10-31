@@ -12,13 +12,13 @@ struct CarsView: View {
     @ObservedObject var carsViewModel: CarsViewModel = CarsViewModel()
     
     var body: some View {
-        LazyVStack{
-            ScrollView(showsIndicators: false){
-                ForEach(carsViewModel.cars){ car in
-                    
-                }
+        List{
+            ForEach(carsViewModel.cars){ car in
+                CarView(car: car)
+                    .listRowSeparator(.hidden)
             }
         }
+        .listStyle(PlainListStyle())
     }
 }
 
