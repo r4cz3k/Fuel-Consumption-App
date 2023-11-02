@@ -21,45 +21,35 @@ struct CarView: View {
             }
             .font(.largeTitle)
             
-             
-            HStack{
-                Text("Average consumption:")
-                    .font(.headline)
-                Text("\(String(car.averageConsumption))L / 100km")
-            }
+            CarInfoRowView(
+                infoTitle: "Average Consumption",
+                infoData: "\(String(car.averageConsumption))L / 100km")
             
-            HStack{
-                Text("Fuel type:")
-                    .font(.headline)
-                Text("\(car.fuelType.capitalized)")
-            }
-            
-            HStack{
-                Text("Engine size:")
-                    .font(.headline)
-                Text("\(String(car.engineSize)) cc")
-            }
-            
+            CarInfoRowView(
+                infoTitle: "Fuel Type",
+                infoData: "\(car.fuelType.capitalized)")
+
+            CarInfoRowView(
+                infoTitle: "Engine Size",
+                infoData: "\(String(car.engineSize)) cc")
+
             VStack(alignment: .leading){
                 Text("Last Refueling:")
                     .font(.title)
                     .bold()
+                
                 VStack(alignment: .leading){
-                    HStack{
-                        Text("Date:")
-                            .font(.headline)
-                        Text(String(car.refuelingHistory[car.refuelingHistory.count - 1].date.formatted(date: .numeric, time: .omitted)))
-                    }
-                    HStack{
-                        Text("Fuel amount:")
-                            .font(.headline)
-                        Text("\(String(car.refuelingHistory[car.refuelingHistory.count - 1].fuelAmount)) L")
-                    }
-                    HStack{
-                        Text("Fuel amount:")
-                            .font(.headline)
-                        Text("\(String(car.refuelingHistory[car.refuelingHistory.count - 1].moneyPaid)) PLN")
-                    }
+                    CarInfoRowView(
+                        infoTitle: "Date",
+                        infoData: String(car.refuelingHistory[car.refuelingHistory.count - 1].date.formatted(date: .numeric, time: .omitted)))
+                    
+                    CarInfoRowView(
+                        infoTitle: "Fuel Amount",
+                        infoData: "\(String(car.refuelingHistory[car.refuelingHistory.count - 1].fuelAmount)) L")
+                    
+                    CarInfoRowView(
+                        infoTitle: "Money Amount",
+                        infoData: "\(String(car.refuelingHistory[car.refuelingHistory.count - 1].moneyPaid)) PLN")
                 }
                 .padding(.horizontal)
             }
