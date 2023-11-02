@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C15A743E2AF440B400747603 /* CarInfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A743D2AF440B400747603 /* CarInfoRowView.swift */; };
 		C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */; };
 		C16062EB2AF126E100D6B14B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062EA2AF126E100D6B14B /* Assets.xcassets */; };
 		C16062EE2AF126E100D6B14B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062ED2AF126E100D6B14B /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C15A743D2AF440B400747603 /* CarInfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoRowView.swift; sourceTree = "<group>"; };
 		C16062E32AF126E100D6B14B /* FuelConsumption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuelConsumption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionApp.swift; sourceTree = "<group>"; };
 		C16062EA2AF126E100D6B14B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				C16062F92AF1281400D6B14B /* CarsView.swift */,
 				C16063012AF12F2300D6B14B /* CarView.swift */,
 				C1E9EB2C2AF244D8008065AF /* NavigationView.swift */,
+				C15A743D2AF440B400747603 /* CarInfoRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				C16063022AF12F2300D6B14B /* CarView.swift in Sources */,
 				C16062FC2AF1288500D6B14B /* CarsViewModel.swift in Sources */,
 				C1E9EB2D2AF244D8008065AF /* NavigationView.swift in Sources */,
+				C15A743E2AF440B400747603 /* CarInfoRowView.swift in Sources */,
 				C16062FA2AF1281400D6B14B /* CarsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
