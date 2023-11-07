@@ -12,7 +12,7 @@ struct CarView: View {
     var car: CarModel
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 10){
             HStack{
                 Text(car.carBrand)
                     .bold()
@@ -38,7 +38,7 @@ struct CarView: View {
                     .font(.title)
                     .bold()
                 
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 10){
                     CarInfoRowView(
                         infoTitle: "Date",
                         infoData: String(car.refuelingHistory[car.refuelingHistory.count - 1].date.formatted(date: .numeric, time: .omitted)))
@@ -56,9 +56,11 @@ struct CarView: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(.gray)
-        .clipShape(RoundedRectangle(cornerRadius: 15))
-        .padding()
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(lineWidth: 2)
+        )
     }
 }
 
