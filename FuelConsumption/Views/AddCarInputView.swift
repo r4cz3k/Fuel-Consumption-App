@@ -10,8 +10,8 @@ import SwiftUI
 struct AddCarInputView: View {
     
     var headline: String
-    
     @State var bindedText: String
+    var numKeyboard: Bool
     
     var body: some View {
         VStack(alignment: .leading){
@@ -19,6 +19,7 @@ struct AddCarInputView: View {
                 .font(.title2)
                 .fontWeight(.bold)
             TextField("Type here...", text: $bindedText)
+                .keyboardType(numKeyboard ? .decimalPad : .default)
                 .padding()
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .overlay(
@@ -30,5 +31,5 @@ struct AddCarInputView: View {
 }
 
 #Preview {
-    AddCarInputView(headline: "Car brand",bindedText: "")
+    AddCarInputView(headline: "Car brand", bindedText: "", numKeyboard: true)
 }
