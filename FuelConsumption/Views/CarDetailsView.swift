@@ -13,7 +13,7 @@ struct CarDetailsView: View {
     
     var body: some View {
         NavigationStack{
-            Text("CHUJ")
+            
         }
         .toolbar{
             ToolbarItem(placement: .topBarTrailing) {
