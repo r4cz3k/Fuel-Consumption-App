@@ -23,14 +23,14 @@ struct CarsView: View {
                 })
             }
             .listStyle(PlainListStyle())
-            .navigationTitle("Cars")
+            .navigationTitle("My Cars")
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
                     EditButton()
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     NavigationLink(
-                        destination: Text("Add car"),
+                        destination: AddCarView(),
                         label: {
                             Text("Add")
                         }

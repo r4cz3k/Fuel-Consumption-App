@@ -15,7 +15,7 @@ struct NavigationView: View {
                 CarsView()
                     .tabItem {
                         Image(systemName: "car")
-                        Text("Cars")
+                        Text("My Cars")
                     }
                 
                 Text("Trips")
