@@ -12,7 +12,7 @@ struct CarDetailsView: View {
     var car: CarModel
     
     var body: some View {
-        VStack{
+        NavigationStack{
             VStack(alignment: .leading, spacing: 20){
                 HStack{
                     Text(car.carBrand)
@@ -56,6 +56,30 @@ struct CarDetailsView: View {
                     }
                     .padding(.horizontal)
                 }
+                
+                Text("Show Refueling History")
+                    .padding()
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 2)
+                    )
+                
+                Spacer()
+                
+                Text("Add Refueling")
+                    .padding()
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 2)
+                    )
+                
+                
             }
         }
         .padding()
