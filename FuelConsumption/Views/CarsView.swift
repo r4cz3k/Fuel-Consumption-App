@@ -18,9 +18,8 @@ struct CarsView: View {
                     CarView(car: car)
                         .listRowSeparator(.hidden)
                 }
-                .onDelete(perform: { indexSet in
-                    carsViewModel.cars.remove(atOffsets: indexSet)
-                })
+                .onDelete(perform: carsViewModel.deleteCar)
+                .onMove(perform: carsViewModel.moveCar)
             }
             .listStyle(PlainListStyle())
             .navigationTitle("My Cars")
