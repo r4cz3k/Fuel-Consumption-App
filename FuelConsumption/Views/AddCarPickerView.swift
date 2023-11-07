@@ -32,9 +32,9 @@ struct AddCarPickerView: View {
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
                     .frame(height: 55)
                     .frame(maxWidth: .infinity)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay(
-                        RoundedRectangle(cornerRadius: 15)
+                        RoundedRectangle(cornerRadius: 10)
                             .stroke(colorScheme == .dark ? .white : .black, lineWidth: 2)
                     )
             }

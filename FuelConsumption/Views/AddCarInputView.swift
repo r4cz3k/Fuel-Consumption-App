@@ -21,9 +21,9 @@ struct AddCarInputView: View {
             TextField("Type here...", text: $bindedText)
                 .keyboardType(numKeyboard ? .decimalPad : .default)
                 .padding()
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 15)
+                    RoundedRectangle(cornerRadius: 10)
                         .stroke(.primary,lineWidth: 2)
                 )
         }

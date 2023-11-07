@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddCarView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var carBrand: String = ""
     @State var carModel: String = ""
     @State var engineSize: String = ""
@@ -21,6 +23,16 @@ struct AddCarView: View {
                 AddCarInputView(headline: "Car Model", bindedText: carModel, numKeyboard: false)
                 AddCarInputView(headline: "Engine Size", bindedText: engineSize, numKeyboard: true)
                 AddCarPickerView(selection: fuelType)
+                Spacer()
+                Text("Add Car")
+                    .padding()
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(colorScheme == .dark ? .white : .black, lineWidth: 2)
+                    )
             }
         }
         .padding()
