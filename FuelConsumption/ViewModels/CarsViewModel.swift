@@ -8,7 +8,18 @@
 import Foundation
 
 class CarsViewModel: ObservableObject{
-    @Published var cars: [CarModel] = [CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingHistoryItem( date: Date(), fuelAmount: 39, moneyPaid: 190)], engineSize: 975, averageConsumption: 5.4)]
+    
+    init() {
+        loadCars()
+    }
+    
+    @Published var cars: [CarModel] = [] {
+        didSet{
+            saveCars()
+        }
+    }
+    
+    let carsKey: String = "cars_list"
     
     func addCar(carBrand: String, carModel: String, fuelType: String, engineSize: Int){
         cars.append( CarModel(
@@ -29,4 +40,18 @@ class CarsViewModel: ObservableObject{
         cars.move(fromOffsets: indices, toOffset: newOffset)
     }
     
+    func loadCars() {
+        guard
+            let data = UserDefaults.standard.data(forKey: carsKey),
+            let savedCars = try? JSONDecoder().decode([CarModel].self, from: data)
+        else { return }
+
+        self.cars = savedCars
+    }
+    
+    func saveCars() {
+        if let encodedData = try? JSONEncoder().encode(cars) {
+            UserDefaults.standard.set(encodedData, forKey: carsKey)
+        }
+    }
 }

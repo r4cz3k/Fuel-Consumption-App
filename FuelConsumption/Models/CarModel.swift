@@ -16,13 +16,13 @@ enum fuelTypes: String{
     static let allFuelTypes = [gasoline, diesel, lpg, cng]
 }
 
-struct RefuelingHistoryItem{
+struct RefuelingHistoryItem: Codable{
     var date: Date
     var fuelAmount: Double
     var moneyPaid: Double
 }
 
-struct CarModel: Identifiable{
+struct CarModel: Identifiable, Codable{
     let id: String
     var carBrand: String
     var carModel: String
