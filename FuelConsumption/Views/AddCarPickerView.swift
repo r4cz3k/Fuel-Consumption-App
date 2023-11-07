@@ -10,7 +10,7 @@ import SwiftUI
 struct AddCarPickerView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @State var selection: String
+    @Binding var selection: String
     
     var body: some View {
         VStack(alignment: .leading){
@@ -43,5 +43,5 @@ struct AddCarPickerView: View {
 }
 
 #Preview {
-    AddCarPickerView(selection: "")
+    AddCarPickerView(selection: Binding<String>.constant(""))
 }

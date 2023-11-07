@@ -29,7 +29,7 @@ struct CarsView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     NavigationLink(
-                        destination: AddCarView(),
+                        destination: AddCarView(carsViewModel: carsViewModel),
                         label: {
                             Text("Add")
                         }

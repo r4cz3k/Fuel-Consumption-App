@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddCarView: View {
     
+    @ObservedObject var carsViewModel: CarsViewModel
+    
     @State var carBrand: String = ""
     @State var carModel: String = ""
     @State var engineSize: String = ""
@@ -17,10 +19,10 @@ struct AddCarView: View {
     var body: some View {
         VStack{
             VStack(alignment: .leading, spacing: 20){
-                AddCarInputView(headline: "Car Brand", bindedText: carBrand, numKeyboard: false)
-                AddCarInputView(headline: "Car Model", bindedText: carModel, numKeyboard: false)
-                AddCarInputView(headline: "Engine Size", bindedText: engineSize, numKeyboard: true)
-                AddCarPickerView(selection: fuelType)
+                AddCarInputView(headline: "Car Brand", bindedText: $carBrand, numKeyboard: false)
+                AddCarInputView(headline: "Car Model", bindedText: $carModel, numKeyboard: false)
+                AddCarInputView(headline: "Engine Size", bindedText: $engineSize, numKeyboard: true)
+                AddCarPickerView(selection: $fuelType)
                 Spacer()
                 Text("Add Car")
                     .padding()
@@ -31,6 +33,13 @@ struct AddCarView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 2)
                     )
+                    .onTapGesture {
+                        carsViewModel.addCar(
+                            carBrand: carBrand,
+                            carModel: carModel,
+                            fuelType: fuelType,
+                            engineSize: Int(engineSize) ?? 0)
+                    }
             }
         }
         .padding()
@@ -38,5 +47,5 @@ struct AddCarView: View {
 }
 
 #Preview {
-    AddCarView()
+    AddCarView(carsViewModel: CarsViewModel())
 }
