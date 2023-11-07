@@ -28,6 +28,7 @@ struct CarModel: Identifiable, Codable{
     var carModel: String
     var fuelType: String
     var refuelingHistory: [RefuelingHistoryItem]
-    var engineSize: Int // In cc for example 1975cc 1.975 l
+    var registrationNumber: String
+    var yearOfProduction: Int
     var averageConsumption: Double // App will have three types of average consumption - mpg, kpl, l/100km
 }

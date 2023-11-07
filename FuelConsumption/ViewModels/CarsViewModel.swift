@@ -21,14 +21,15 @@ class CarsViewModel: ObservableObject{
     
     let carsKey: String = "cars_list"
     
-    func addCar(carBrand: String, carModel: String, fuelType: String, engineSize: Int){
+    func addCar(carBrand: String, carModel: String, fuelType: String, registrationNumber: String, yearOfProduction: Int){
         cars.append( CarModel(
             id: UUID().uuidString,
             carBrand: carBrand,
             carModel: carModel,
             fuelType: fuelType,
             refuelingHistory: [RefuelingHistoryItem( date: Date(), fuelAmount: 0, moneyPaid: 0)],
-            engineSize: engineSize,
+            registrationNumber: registrationNumber,
+            yearOfProduction: yearOfProduction,
             averageConsumption: 0.0))
     }
     

@@ -13,15 +13,17 @@ struct AddCarView: View {
     
     @State var carBrand: String = ""
     @State var carModel: String = ""
-    @State var engineSize: String = ""
     @State var fuelType: String = ""
+    @State var registrationNumber: String = ""
+    @State var yearOfProduction: String = ""
     
     var body: some View {
         VStack{
             VStack(alignment: .leading, spacing: 20){
                 AddCarInputView(headline: "Car Brand", bindedText: $carBrand, numKeyboard: false)
                 AddCarInputView(headline: "Car Model", bindedText: $carModel, numKeyboard: false)
-                AddCarInputView(headline: "Engine Size", bindedText: $engineSize, numKeyboard: true)
+                AddCarInputView(headline: "Registration Number", bindedText: $registrationNumber, numKeyboard: true)
+                AddCarInputView(headline: "Year Of Production", bindedText: $yearOfProduction, numKeyboard: true)
                 AddCarPickerView(selection: $fuelType)
                 Spacer()
                 Text("Add Car")
@@ -38,7 +40,8 @@ struct AddCarView: View {
                             carBrand: carBrand,
                             carModel: carModel,
                             fuelType: fuelType,
-                            engineSize: Int(engineSize) ?? 0)
+                            registrationNumber: registrationNumber,
+                            yearOfProduction: Int(yearOfProduction) ?? 2023)
                     }
             }
         }

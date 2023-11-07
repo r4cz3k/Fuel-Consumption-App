@@ -15,7 +15,12 @@ struct CarsView: View {
         NavigationStack{
             List{
                 ForEach(carsViewModel.cars){ car in
-                    CarView(car: car)
+                    NavigationLink(
+                        destination: CarDetailsView(car: car),
+                        label: {
+                            CarView(car: car)
+                        }
+                    )
                         .listRowSeparator(.hidden)
                 }
                 .onDelete(perform: carsViewModel.deleteCar)

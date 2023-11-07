@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C14180992AFAE59600E4AA5F /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14180982AFAE59600E4AA5F /* CarDetailsView.swift */; };
 		C15A743E2AF440B400747603 /* CarInfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A743D2AF440B400747603 /* CarInfoRowView.swift */; };
 		C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */; };
 		C16062EB2AF126E100D6B14B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16062EA2AF126E100D6B14B /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C14180982AFAE59600E4AA5F /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
 		C15A743D2AF440B400747603 /* CarInfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoRowView.swift; sourceTree = "<group>"; };
 		C16062E32AF126E100D6B14B /* FuelConsumption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuelConsumption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16062E62AF126E100D6B14B /* FuelConsumptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionApp.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C1F77EB52AF8CA6E00131363 /* AddCarView.swift */,
 				C1DF135A2AFAAF3C000E8F96 /* AddCarInputView.swift */,
 				C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */,
+				C14180982AFAE59600E4AA5F /* CarDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				C16062FE2AF1288E00D6B14B /* CarModel.swift in Sources */,
 				C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */,
 				C1DF135B2AFAAF3C000E8F96 /* AddCarInputView.swift in Sources */,
+				C14180992AFAE59600E4AA5F /* CarDetailsView.swift in Sources */,
 				C1DF135D2AFAB284000E8F96 /* AddCarPickerView.swift in Sources */,
 				C16063022AF12F2300D6B14B /* CarView.swift in Sources */,
 				C16062FC2AF1288500D6B14B /* CarsViewModel.swift in Sources */,
