@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NavigationView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ZStack{
             
@@ -30,6 +33,7 @@ struct NavigationView: View {
                         Text("Settings")
                     }
             }
+            .tint(colorScheme == .dark ? .white : .black)
         }
     }
 }
