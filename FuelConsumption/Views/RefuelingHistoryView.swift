@@ -11,22 +11,23 @@ struct RefuelingHistoryView: View {
     var car: CarModel
     
     var body: some View {
-        
-        VStack(alignment: .leading, spacing: 20){
-            Text("Statistics")
-                .font(.largeTitle)
-                .bold()
-                .frame(maxWidth: .infinity)
-            CarInfoRowView(infoTitle: "Tanked Fuel", infoData: "---")
-            CarInfoRowView(infoTitle: "Money Paid", infoData: "---")
-            
+        NavigationStack{
+            VStack(alignment: .leading, spacing: 20){
+                Text("Statistics")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth: .infinity)
+                CarInfoRowView(infoTitle: "Tanked Fuel", infoData: "---")
+                CarInfoRowView(infoTitle: "Money Paid", infoData: "---")
+            }
             List{
                 ForEach(car.refuelingHistory){ refueling in
                     NavigationLink(
                         destination: Text("HistoryView"),
                         label: {
-                            
+                            RefuelingHistoryRowView(date: refueling.date)
                         })
+                    
                 }
                 .listRowSeparator(.hidden)
             }
