@@ -16,7 +16,8 @@ enum fuelTypes: String{
     static let allFuelTypes = [gasoline, diesel, lpg, cng]
 }
 
-struct RefuelingHistoryItem: Codable{
+struct RefuelingHistoryItem: Identifiable, Codable{
+    var id: String = UUID().uuidString
     var date: Date
     var fuelAmount: Double
     var moneyPaid: Double
