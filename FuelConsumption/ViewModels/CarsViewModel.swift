@@ -27,7 +27,7 @@ class CarsViewModel: ObservableObject{
             carBrand: carBrand,
             carModel: carModel,
             fuelType: fuelType,
-            refuelingHistory: [RefuelingHistoryItem( date: Date(), fuelAmount: 0, moneyPaid: 0)],
+            refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 0, moneyPaid: 0)],
             registrationNumber: registrationNumber,
             yearOfProduction: yearOfProduction,
             averageConsumption: 0.0))

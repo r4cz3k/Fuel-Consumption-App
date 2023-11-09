@@ -18,7 +18,7 @@ struct AddCarView: View {
     @State var yearOfProduction: String = ""
     
     var body: some View {
-        VStack{
+        ScrollView(showsIndicators: false){
             VStack(alignment: .leading, spacing: 20){
                 AddCarInputView(headline: "Car Brand", bindedText: $carBrand, numKeyboard: false)
                 AddCarInputView(headline: "Car Model", bindedText: $carModel, numKeyboard: false)
@@ -46,6 +46,7 @@ struct AddCarView: View {
             }
         }
         .padding()
+        .padding(.top, -20)
     }
 }
 

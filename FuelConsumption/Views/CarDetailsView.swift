@@ -57,15 +57,21 @@ struct CarDetailsView: View {
                     .padding(.horizontal)
                 }
                 
-                Text("Show Refueling History")
-                    .padding()
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 2)
-                    )
+                NavigationLink(
+                    destination: RefuelingHistoryView(car: car),
+                    label: {
+                        Text("Show Refueling History")
+                            .padding()
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(lineWidth: 2)
+                            )
+                    }
+                )
+                    
                 
                 Spacer()
                 
@@ -83,9 +89,10 @@ struct CarDetailsView: View {
             }
         }
         .padding()
+        .padding(.top, -50)
     }
 }
 
 #Preview {
-    CarDetailsView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingHistoryItem( date: Date(), fuelAmount: 39, moneyPaid: 190)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
+    CarDetailsView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
 }

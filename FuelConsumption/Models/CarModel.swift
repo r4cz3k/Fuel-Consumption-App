@@ -16,19 +16,14 @@ enum fuelTypes: String{
     static let allFuelTypes = [gasoline, diesel, lpg, cng]
 }
 
-struct RefuelingHistoryItem: Identifiable, Codable{
-    var id: String = UUID().uuidString
-    var date: Date
-    var fuelAmount: Double
-    var moneyPaid: Double
-}
+
 
 struct CarModel: Identifiable, Codable{
     let id: String
     var carBrand: String
     var carModel: String
     var fuelType: String
-    var refuelingHistory: [RefuelingHistoryItem]
+    var refuelingHistory: [RefuelingModel]
     var registrationNumber: String
     var yearOfProduction: Int
     var averageConsumption: Double // App will have three types of average consumption - mpg, kpl, l/100km

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    var refueling: RefuelingHistoryItem
+    var refueling: RefuelingModel
     
     @State var fuelAmount: String = String()
     @State var moneyPaid: String = String()
@@ -43,5 +43,5 @@ struct HistoryView: View {
 }
 
 #Preview {
-    HistoryView(refueling: RefuelingHistoryItem( date: Date(), fuelAmount: 39, moneyPaid: 190))
+    HistoryView(refueling: RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190))
 }
