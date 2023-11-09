@@ -23,7 +23,7 @@ struct RefuelingHistoryView: View {
             List{
                 ForEach(car.refuelingHistory){ refueling in
                     NavigationLink(
-                        destination: Text("HistoryView"),
+                        destination: HistoryView(refueling: refueling),
                         label: {
                             RefuelingHistoryRowView(date: refueling.date)
                         })
