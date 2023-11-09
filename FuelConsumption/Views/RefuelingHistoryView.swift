@@ -13,13 +13,13 @@ struct RefuelingHistoryView: View {
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 20){
-                Text("Statistics")
-                    .font(.largeTitle)
-                    .bold()
-                    .frame(maxWidth: .infinity)
+                HStack{
+                    Spacer()
+                }
                 CarInfoRowView(infoTitle: "Tanked Fuel", infoData: "---")
                 CarInfoRowView(infoTitle: "Money Paid", infoData: "---")
             }
+            .navigationTitle("Statistics")
             List{
                 ForEach(car.refuelingHistory){ refueling in
                     NavigationLink(
