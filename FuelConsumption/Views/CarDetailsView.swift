@@ -45,15 +45,15 @@ struct CarDetailsView: View {
                     VStack(alignment: .leading, spacing: 10){
                         CarInfoRowView(
                             infoTitle: "Date",
-                            infoData: String(car.refuelingHistory[car.refuelingHistory.count - 1].date.formatted(date: .numeric, time: .omitted)))
+                            infoData: String(car.refuelingHistory[0].date.formatted(.dateTime.day().month(.wide).year())))
                         
                         CarInfoRowView(
                             infoTitle: "Fuel Amount",
-                            infoData: "\(String(car.refuelingHistory[car.refuelingHistory.count - 1].fuelAmount)) L")
+                            infoData: "\(String(car.refuelingHistory[0].fuelAmount)) L")
                         
                         CarInfoRowView(
                             infoTitle: "Money Amount",
-                            infoData: "\(String(car.refuelingHistory[car.refuelingHistory.count - 1].moneyPaid)) PLN")
+                            infoData: "\(String(car.refuelingHistory[0].moneyPaid)) PLN")
                     }
                     .padding(.horizontal)
                 }
@@ -76,15 +76,20 @@ struct CarDetailsView: View {
                 
                 Spacer()
                 
-                Text("Add Refueling")
-                    .padding()
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 2)
-                    )
+                NavigationLink(
+                    destination: AddRefuelingView(carsViewModel: carsViewModel, car: car),
+                    label: {
+                        Text("Add Refueling")
+                            .padding()
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(lineWidth: 2)
+                            )
+                    }
+                )
                 
                 
             }

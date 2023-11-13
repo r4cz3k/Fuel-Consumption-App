@@ -63,4 +63,10 @@ class CarsViewModel: ObservableObject{
             }
         }
     }
+    
+    func addRefueling(car: CarModel, fuelAmount: Double, moneyPaid: Double){
+        if let index = cars.firstIndex(where: {$0.id == car.id}){
+            cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid), at: 0)
+        }
+    }
 }

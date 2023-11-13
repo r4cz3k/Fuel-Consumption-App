@@ -20,6 +20,7 @@
 		C16063022AF12F2300D6B14B /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16063012AF12F2300D6B14B /* CarView.swift */; };
 		C16A576C2AFC2DB7001050BB /* RefuelingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */; };
 		C16A576E2AFC3D25001050BB /* RefuelingHistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */; };
+		C16BC2672B02D64600942E58 /* AddRefuelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16BC2662B02D64600942E58 /* AddRefuelingView.swift */; };
 		C1DF135B2AFAAF3C000E8F96 /* AddCarInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DF135A2AFAAF3C000E8F96 /* AddCarInputView.swift */; };
 		C1DF135D2AFAB284000E8F96 /* AddCarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */; };
 		C1E9EB2D2AF244D8008065AF /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9EB2C2AF244D8008065AF /* NavigationView.swift */; };
@@ -41,6 +42,7 @@
 		C16063012AF12F2300D6B14B /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelingHistoryView.swift; sourceTree = "<group>"; };
 		C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelingHistoryRowView.swift; sourceTree = "<group>"; };
+		C16BC2662B02D64600942E58 /* AddRefuelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuelingView.swift; sourceTree = "<group>"; };
 		C1DF135A2AFAAF3C000E8F96 /* AddCarInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarInputView.swift; sourceTree = "<group>"; };
 		C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarPickerView.swift; sourceTree = "<group>"; };
 		C1E9EB2C2AF244D8008065AF /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */,
 				C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */,
 				C155E19D2AFCD17F00F6BC93 /* HistoryView.swift */,
+				C16BC2662B02D64600942E58 /* AddRefuelingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				C16A576C2AFC2DB7001050BB /* RefuelingHistoryView.swift in Sources */,
 				C16A576E2AFC3D25001050BB /* RefuelingHistoryRowView.swift in Sources */,
 				C14180992AFAE59600E4AA5F /* CarDetailsView.swift in Sources */,
+				C16BC2672B02D64600942E58 /* AddRefuelingView.swift in Sources */,
 				C1DF135D2AFAB284000E8F96 /* AddCarPickerView.swift in Sources */,
 				C155E19E2AFCD17F00F6BC93 /* HistoryView.swift in Sources */,
 				C16063022AF12F2300D6B14B /* CarView.swift in Sources */,
