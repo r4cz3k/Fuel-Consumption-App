@@ -15,6 +15,7 @@ struct HistoryView: View {
     
     @State var fuelAmount: String = String()
     @State var moneyPaid: String = String()
+    @State var date: Date = Date()
     
     var body: some View {
         NavigationStack{
@@ -22,6 +23,8 @@ struct HistoryView: View {
                 AddCarInputView(headline: "Fuel Amount", bindedText: $fuelAmount, numKeyboard: true)
                 
                 AddCarInputView(headline: "Money Paid", bindedText: $moneyPaid, numKeyboard: true)
+                
+                DatePicker("Date", selection: $date, in: ...Date.now, displayedComponents: .date)
                 
                 Spacer()
                 
@@ -35,7 +38,7 @@ struct HistoryView: View {
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: Date(), newFuelAmount: Double(fuelAmount) ?? 0, newMoneyPaid: Double(moneyPaid) ?? 0)
+                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount) ?? 0, newMoneyPaid: Double(moneyPaid) ?? 0)
                     }
             }
             .padding()
@@ -52,6 +55,7 @@ extension HistoryView {
         if let index = car.refuelingHistory.firstIndex(where: { $0.id == refueling.id}){
             fuelAmount = String(car.refuelingHistory[index].fuelAmount)
             moneyPaid = String(car.refuelingHistory[index].moneyPaid)
+            date = car.refuelingHistory[index].date
         }
     }
 }
