@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RefuelingHistoryView: View {
     var car: CarModel
+    var carsViewModel: CarsViewModel
     
     var body: some View {
         NavigationStack{
@@ -23,7 +24,7 @@ struct RefuelingHistoryView: View {
             List{
                 ForEach(car.refuelingHistory){ refueling in
                     NavigationLink(
-                        destination: HistoryView(refueling: refueling),
+                        destination: HistoryView(carsViewModel: carsViewModel, refueling: refueling, car: car),
                         label: {
                             RefuelingHistoryRowView(date: refueling.date)
                         })
@@ -38,5 +39,5 @@ struct RefuelingHistoryView: View {
 }
 
 #Preview {
-    RefuelingHistoryView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
+    RefuelingHistoryView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4), carsViewModel: CarsViewModel())
 }

@@ -19,8 +19,8 @@ struct AddCarPickerView: View {
                 .fontWeight(.bold)
             Menu{
                 Picker("Fuel Type", selection: $selection){
-                    Text("Gasoline").tag(fuelTypes.gasoline.rawValue)
-                    Text("Diesel").tag(fuelTypes.diesel.rawValue)
+                    Text("Gasoline").tag(fuelTypes.gasoline.rawValue.capitalized)
+                    Text("Diesel").tag(fuelTypes.diesel.rawValue.capitalized)
                     Text("LPG").tag(fuelTypes.lpg.rawValue)
                     Text("CNG").tag(fuelTypes.cng.rawValue)
                 }

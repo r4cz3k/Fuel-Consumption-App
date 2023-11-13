@@ -55,4 +55,12 @@ class CarsViewModel: ObservableObject{
             UserDefaults.standard.set(encodedData, forKey: carsKey)
         }
     }
+
+    func updateRefueling(car: CarModel, refueling: RefuelingModel, newDate: Date, newFuelAmount: Double, newMoneyPaid: Double){
+        if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
+            if let refuelingIndex = car.refuelingHistory.firstIndex(where: {$0.id == refueling.id}){
+                cars[carIndex].refuelingHistory[refuelingIndex] = refueling.updateRefueling(newDate: newDate, newFuelAmount: newFuelAmount, newMoneyPaid: newMoneyPaid)
+            }
+        }
+    }
 }

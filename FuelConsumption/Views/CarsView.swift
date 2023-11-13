@@ -16,7 +16,7 @@ struct CarsView: View {
             List{
                 ForEach(carsViewModel.cars){ car in
                     NavigationLink(
-                        destination: CarDetailsView(car: car),
+                        destination: CarDetailsView(carsViewModel: carsViewModel, car: car),
                         label: {
                             CarView(car: car)
                         }

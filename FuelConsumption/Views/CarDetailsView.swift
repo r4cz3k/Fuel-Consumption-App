@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CarDetailsView: View {
     
+    var carsViewModel: CarsViewModel
     var car: CarModel
     
     var body: some View {
@@ -58,7 +59,7 @@ struct CarDetailsView: View {
                 }
                 
                 NavigationLink(
-                    destination: RefuelingHistoryView(car: car),
+                    destination: RefuelingHistoryView(car: car, carsViewModel: carsViewModel),
                     label: {
                         Text("Show Refueling History")
                             .padding()
@@ -94,5 +95,5 @@ struct CarDetailsView: View {
 }
 
 #Preview {
-    CarDetailsView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
+    CarDetailsView(carsViewModel: CarsViewModel(),car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
 }

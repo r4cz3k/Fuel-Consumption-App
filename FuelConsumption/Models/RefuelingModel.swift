@@ -8,8 +8,19 @@
 import Foundation
 
 struct RefuelingModel: Identifiable, Codable{
-    var id: String = UUID().uuidString
-    var date: Date
-    var fuelAmount: Double
-    var moneyPaid: Double
+    let id: String
+    let date: Date
+    let fuelAmount: Double
+    let moneyPaid: Double
+    
+    init(id: String = UUID().uuidString, date: Date, fuelAmount: Double, moneyPaid: Double){
+        self.id = id
+        self.date = date
+        self.fuelAmount = fuelAmount
+        self.moneyPaid = moneyPaid
+    }
+    
+    func updateRefueling(newDate: Date, newFuelAmount: Double, newMoneyPaid: Double) -> RefuelingModel {
+        return RefuelingModel(id: id, date: newDate, fuelAmount: newFuelAmount, moneyPaid: newMoneyPaid)
+    }
 }
