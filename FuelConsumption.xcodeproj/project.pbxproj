@@ -60,6 +60,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C14B46C12B039B18001108BE /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+				C14B46C52B039B52001108BE /* Refueling */,
+				C14B46C42B039B4D001108BE /* Car */,
+			);
+			path = Cars;
+			sourceTree = "<group>";
+		};
+		C14B46C22B039B1E001108BE /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		C14B46C32B039B29001108BE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C14B46C42B039B4D001108BE /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				C16062F92AF1281400D6B14B /* CarsView.swift */,
+				C16063012AF12F2300D6B14B /* CarView.swift */,
+				C14180982AFAE59600E4AA5F /* CarDetailsView.swift */,
+				C15A743D2AF440B400747603 /* CarInfoRowView.swift */,
+				C1F77EB52AF8CA6E00131363 /* AddCarView.swift */,
+				C1DF135A2AFAAF3C000E8F96 /* AddCarInputView.swift */,
+				C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		C14B46C52B039B52001108BE /* Refueling */ = {
+			isa = PBXGroup;
+			children = (
+				C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */,
+				C155E19D2AFCD17F00F6BC93 /* HistoryView.swift */,
+				C16BC2662B02D64600942E58 /* AddRefuelingView.swift */,
+				C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */,
+			);
+			path = Refueling;
+			sourceTree = "<group>";
+		};
 		C16062DA2AF126E100D6B14B = {
 			isa = PBXGroup;
 			children = (
@@ -117,18 +165,10 @@
 		C16062F62AF1275500D6B14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C16062F92AF1281400D6B14B /* CarsView.swift */,
-				C16063012AF12F2300D6B14B /* CarView.swift */,
+				C14B46C32B039B29001108BE /* Settings */,
+				C14B46C22B039B1E001108BE /* Trips */,
+				C14B46C12B039B18001108BE /* Cars */,
 				C1E9EB2C2AF244D8008065AF /* NavigationView.swift */,
-				C15A743D2AF440B400747603 /* CarInfoRowView.swift */,
-				C1F77EB52AF8CA6E00131363 /* AddCarView.swift */,
-				C1DF135A2AFAAF3C000E8F96 /* AddCarInputView.swift */,
-				C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */,
-				C14180982AFAE59600E4AA5F /* CarDetailsView.swift */,
-				C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */,
-				C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */,
-				C155E19D2AFCD17F00F6BC93 /* HistoryView.swift */,
-				C16BC2662B02D64600942E58 /* AddRefuelingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
