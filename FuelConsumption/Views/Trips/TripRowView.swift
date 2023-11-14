@@ -22,11 +22,11 @@ struct TripRowView: View {
                 }
                 .font(.title)
                 
-                CarInfoRowView(
+                InfoRowView(
                     infoTitle: "Participants",
                     infoData: String(trip.participants.count))
                 
-                CarInfoRowView(
+                InfoRowView(
                     infoTitle: "Cars",
                     infoData: String(trip.cars.count))
             }

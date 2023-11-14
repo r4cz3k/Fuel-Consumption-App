@@ -20,10 +20,10 @@ struct AddCarView: View {
     var body: some View {
         ScrollView(showsIndicators: false){
             VStack(alignment: .leading, spacing: 20){
-                AddCarInputView(headline: "Car Brand", bindedText: $carBrand, numKeyboard: false)
-                AddCarInputView(headline: "Car Model", bindedText: $carModel, numKeyboard: false)
-                AddCarInputView(headline: "Registration Number", bindedText: $registrationNumber, numKeyboard: false)
-                AddCarInputView(headline: "Year Of Production", bindedText: $yearOfProduction, numKeyboard: true)
+                InputView(headline: "Car Brand", bindedText: $carBrand, numKeyboard: false)
+                InputView(headline: "Car Model", bindedText: $carModel, numKeyboard: false)
+                InputView(headline: "Registration Number", bindedText: $registrationNumber, numKeyboard: false)
+                InputView(headline: "Year Of Production", bindedText: $yearOfProduction, numKeyboard: true)
                 AddCarPickerView(selection: $fuelType)
                 Spacer()
                 Text("Add Car")

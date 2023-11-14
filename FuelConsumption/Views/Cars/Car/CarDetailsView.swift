@@ -26,15 +26,15 @@ struct CarDetailsView: View {
                 }
                 .font(.largeTitle)
                 
-                CarInfoRowView(
+                InfoRowView(
                     infoTitle: "Registration Number",
                     infoData: car.registrationNumber)
                 
-                CarInfoRowView(
+                InfoRowView(
                     infoTitle: "Year Of Production",
                     infoData: String(car.yearOfProduction))
                 
-                CarInfoRowView(
+                InfoRowView(
                     infoTitle: "Fuel Type",
                     infoData: car.fuelType.capitalized)
                 
@@ -45,15 +45,15 @@ struct CarDetailsView: View {
                     
                     if(car.refuelingHistory.count > 0){
                         VStack(alignment: .leading, spacing: 10){
-                            CarInfoRowView(
+                            InfoRowView(
                                 infoTitle: "Date",
                                 infoData: String(car.refuelingHistory[0].date.formatted(.dateTime.day().month(.wide).year())))
                             
-                            CarInfoRowView(
+                            InfoRowView(
                                 infoTitle: "Fuel Amount",
                                 infoData: "\(String(car.refuelingHistory[0].fuelAmount)) L")
                             
-                            CarInfoRowView(
+                            InfoRowView(
                                 infoTitle: "Money Amount",
                                 infoData: "\(String(car.refuelingHistory[0].moneyPaid)) PLN")
                         }

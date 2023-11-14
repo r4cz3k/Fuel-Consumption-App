@@ -20,8 +20,8 @@ struct RefuelingHistoryView: View {
                 HStack{
                     Spacer()
                 }
-                CarInfoRowView(infoTitle: "Tanked Fuel", infoData: tankedFuel)
-                CarInfoRowView(infoTitle: "Money Paid", infoData: moneyPaid)
+                InfoRowView(infoTitle: "Tanked Fuel", infoData: tankedFuel)
+                InfoRowView(infoTitle: "Money Paid", infoData: moneyPaid)
             }
             .navigationTitle("Statistics")
             List{

@@ -24,7 +24,7 @@ struct CarView: View {
             }
             .font(.title)
             
-            CarInfoRowView(
+            InfoRowView(
                 infoTitle: "Registration Number",
                 infoData: car.registrationNumber)
         }

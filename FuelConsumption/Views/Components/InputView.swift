@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddCarInputView: View {
+struct InputView: View {
     
     var headline: String
     @Binding var bindedText: String
@@ -31,5 +31,5 @@ struct AddCarInputView: View {
 }
 
 #Preview {
-    AddCarInputView(headline: "Car brand", bindedText: Binding<String>.constant(""), numKeyboard: true)
+    InputView(headline: "Car brand", bindedText: Binding<String>.constant(""), numKeyboard: true)
 }

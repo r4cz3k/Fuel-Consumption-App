@@ -23,11 +23,11 @@ struct HistoryView: View {
     var body: some View {
         NavigationStack{
             VStack(spacing: 20){
-                AddCarInputView(headline: "Fuel Amount", bindedText: $fuelAmount, numKeyboard: true)
+                InputView(headline: "Fuel Amount", bindedText: $fuelAmount, numKeyboard: true)
                 
-                AddCarInputView(headline: "Money Paid", bindedText: $moneyPaid, numKeyboard: true)
+                InputView(headline: "Money Paid", bindedText: $moneyPaid, numKeyboard: true)
                 
-                AddCarInputView(headline: "Distance", bindedText: $distance, numKeyboard: true)
+                InputView(headline: "Distance", bindedText: $distance, numKeyboard: true)
                 
                 DatePicker("Date", selection: $date, in: ...Date.now, displayedComponents: .date)
                 

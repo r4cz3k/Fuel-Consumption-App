@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CarInfoRowView: View {
+struct InfoRowView: View {
     
     let infoTitle: String
     let infoData: String
@@ -22,5 +22,5 @@ struct CarInfoRowView: View {
 }
 
 #Preview {
-    CarInfoRowView(infoTitle: "Engine Size", infoData: "998 cc")
+    InfoRowView(infoTitle: "Engine Size", infoData: "998 cc")
 }
