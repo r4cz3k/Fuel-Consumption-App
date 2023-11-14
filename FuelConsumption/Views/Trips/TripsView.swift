@@ -8,21 +8,33 @@
 import SwiftUI
 
 struct TripsView: View {
+    
+    @ObservedObject var tripsViewModel: TripsViewModel = TripsViewModel()
+    
     var body: some View {
         NavigationStack{
-            
-        }
-        .toolbar{
-            ToolbarItem(placement: .topBarLeading) {
-                EditButton()
+            List{
+                ForEach(tripsViewModel.trips){ trip in
+                    TripRowView(trip: trip)
+                        .listRowSeparator(.hidden)
+                }
+                .onDelete(perform: tripsViewModel.deleteTrip)
+                .onMove(perform: tripsViewModel.moveTrip)
             }
-            ToolbarItem(placement: .topBarTrailing){
-                NavigationLink(
-                    destination: Text("ADD TRIP"),
-                    label: {
-                        Text("Add")
-                    }
-                )
+            .navigationTitle("Trips")
+            .listStyle(PlainListStyle())
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    NavigationLink(
+                        destination: Text("ADD TRIP"),
+                        label: {
+                            Text("Add")
+                        }
+                    )
+                }
             }
         }
     }

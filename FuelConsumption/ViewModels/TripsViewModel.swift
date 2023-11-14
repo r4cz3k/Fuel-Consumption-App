@@ -13,7 +13,9 @@ class TripsViewModel: ObservableObject {
         loadTrips()
     }
     
-    @Published var trips: [TripModel] = []{
+    @Published var trips: [TripModel] = [
+        TripModel(id: UUID().uuidString, title: "Trip to Berlin", participants: [], cars: [], refuelingHistory: [], moneyPaid: 0.0)
+    ]{
         didSet{
             saveTrips()
         }
