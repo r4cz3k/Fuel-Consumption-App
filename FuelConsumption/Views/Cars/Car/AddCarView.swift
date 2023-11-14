@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddCarView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @ObservedObject var carsViewModel: CarsViewModel
     
     @State var carBrand: String = ""
@@ -30,6 +32,8 @@ struct AddCarView: View {
                     .padding()
                     .font(.headline)
                     .frame(maxWidth: .infinity)
+                    .background(colorScheme == .dark ? .white : .black)
+                    .foregroundStyle(colorScheme == .dark ? .black : .white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
