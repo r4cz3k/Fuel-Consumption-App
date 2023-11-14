@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CarView: View {
+struct CarRowView: View {
     
     
     var car: CarModel
@@ -39,5 +39,5 @@ struct CarView: View {
 }
 
 #Preview {
-    CarView( car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 410.75)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4,  fuelTanked: 0.0, moneyPaid: 0.0))
+    CarRowView( car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 410.75)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4,  fuelTanked: 0.0, moneyPaid: 0.0))
 }

@@ -18,7 +18,7 @@ struct CarsView: View {
                     NavigationLink(
                         destination: CarDetailsView(carsViewModel: carsViewModel, car: car),
                         label: {
-                            CarView(car: car)
+                            CarRowView(car: car)
                         }
                     )
                         .listRowSeparator(.hidden)
