@@ -27,7 +27,7 @@ class CarsViewModel: ObservableObject{
             carBrand: carBrand,
             carModel: carModel,
             fuelType: fuelType,
-            refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 0, moneyPaid: 0)],
+            refuelingHistory: [],
             registrationNumber: registrationNumber,
             yearOfProduction: yearOfProduction,
             averageConsumption: 0.0))
@@ -56,24 +56,37 @@ class CarsViewModel: ObservableObject{
         }
     }
 
-    func updateRefueling(car: CarModel, refueling: RefuelingModel, newDate: Date, newFuelAmount: Double, newMoneyPaid: Double){
+    func updateRefueling(car: CarModel, refueling: RefuelingModel, newDate: Date, newFuelAmount: Double, newMoneyPaid: Double, newDistance: Double){
         if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
             if let refuelingIndex = car.refuelingHistory.firstIndex(where: {$0.id == refueling.id}){
-                cars[carIndex].refuelingHistory[refuelingIndex] = refueling.updateRefueling(newDate: newDate, newFuelAmount: newFuelAmount, newMoneyPaid: newMoneyPaid)
+                cars[carIndex].refuelingHistory[refuelingIndex] = refueling.updateRefueling(newDate: newDate, newFuelAmount: newFuelAmount, newMoneyPaid: newMoneyPaid, newDistance: newDistance)
                 sortCarRefuelingHistory(index: carIndex)
+                countAverageConsumption(index: carIndex)
             }
         }
         
     }
     
-    func addRefueling(car: CarModel, fuelAmount: Double, moneyPaid: Double){
+    func addRefueling(car: CarModel, fuelAmount: Double, moneyPaid: Double, distance: Double){
         if let index = cars.firstIndex(where: {$0.id == car.id}){
-            cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid), at: 0)
+            cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid, distance: distance), at: 0)
             sortCarRefuelingHistory(index: index)
+            countAverageConsumption(index: index)
         }
     }
     
     func sortCarRefuelingHistory(index: Int) {
         cars[index].refuelingHistory = cars[index].refuelingHistory.sorted(by: {$0.date.compare($1.date) == .orderedDescending})
+    }
+    
+    func countAverageConsumption(index: Int) {
+        
+        var avg: Double = Double()
+        
+        for refueling in cars[index].refuelingHistory {
+            avg += refueling.fuelAmount / (refueling.distance / 100)
+        }
+        
+        cars[index].averageConsumption = avg
     }
 }

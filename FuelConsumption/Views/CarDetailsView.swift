@@ -20,7 +20,7 @@ struct CarDetailsView: View {
                         .bold()
                     Text(car.carModel)
                     Spacer()
-                    Text("\(String(car.averageConsumption)) L / 100 km")
+                    Text("\(String(format: "%.2f",car.averageConsumption)) L / 100 km")
                         .font(.title2)
                 }
                 .font(.largeTitle)
@@ -100,5 +100,5 @@ struct CarDetailsView: View {
 }
 
 #Preview {
-    CarDetailsView(carsViewModel: CarsViewModel(),car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
+    CarDetailsView(carsViewModel: CarsViewModel(),car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 410.75)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
 }

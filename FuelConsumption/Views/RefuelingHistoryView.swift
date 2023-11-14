@@ -39,5 +39,5 @@ struct RefuelingHistoryView: View {
 }
 
 #Preview {
-    RefuelingHistoryView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4), carsViewModel: CarsViewModel())
+    RefuelingHistoryView(car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 450.76), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180, distance: 430.5)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4), carsViewModel: CarsViewModel())
 }

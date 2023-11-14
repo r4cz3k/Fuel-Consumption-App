@@ -15,6 +15,7 @@ struct HistoryView: View {
     
     @State var fuelAmount: String = String()
     @State var moneyPaid: String = String()
+    @State var distance: String = String()
     @State var date: Date = Date()
     
     var body: some View {
@@ -23,6 +24,8 @@ struct HistoryView: View {
                 AddCarInputView(headline: "Fuel Amount", bindedText: $fuelAmount, numKeyboard: true)
                 
                 AddCarInputView(headline: "Money Paid", bindedText: $moneyPaid, numKeyboard: true)
+                
+                AddCarInputView(headline: "Distance", bindedText: $distance, numKeyboard: true)
                 
                 DatePicker("Date", selection: $date, in: ...Date.now, displayedComponents: .date)
                 
@@ -38,7 +41,7 @@ struct HistoryView: View {
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount) ?? 0, newMoneyPaid: Double(moneyPaid) ?? 0)
+                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount) ?? 0, newMoneyPaid: Double(moneyPaid) ?? 0, newDistance: Double(distance) ?? 0)
                     }
             }
             .padding()
@@ -56,10 +59,11 @@ extension HistoryView {
             fuelAmount = String(car.refuelingHistory[index].fuelAmount)
             moneyPaid = String(car.refuelingHistory[index].moneyPaid)
             date = car.refuelingHistory[index].date
+            distance = String(car.refuelingHistory[index].distance)
         }
     }
 }
 
 #Preview {
-    HistoryView(carsViewModel: CarsViewModel(), refueling: RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190), car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
+    HistoryView(carsViewModel: CarsViewModel(), refueling: RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 430.75), car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 430.75), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180, distance: 390.65)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
 }

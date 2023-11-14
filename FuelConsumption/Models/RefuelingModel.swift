@@ -12,15 +12,18 @@ struct RefuelingModel: Identifiable, Codable{
     let date: Date
     let fuelAmount: Double
     let moneyPaid: Double
+    let distance: Double
+
     
-    init(id: String = UUID().uuidString, date: Date, fuelAmount: Double, moneyPaid: Double){
+    init(id: String = UUID().uuidString, date: Date, fuelAmount: Double, moneyPaid: Double, distance: Double){
         self.id = id
         self.date = date
         self.fuelAmount = fuelAmount
         self.moneyPaid = moneyPaid
+        self.distance = distance
     }
     
-    func updateRefueling(newDate: Date, newFuelAmount: Double, newMoneyPaid: Double) -> RefuelingModel {
-        return RefuelingModel(id: id, date: newDate, fuelAmount: newFuelAmount, moneyPaid: newMoneyPaid)
+    func updateRefueling(newDate: Date, newFuelAmount: Double, newMoneyPaid: Double, newDistance: Double) -> RefuelingModel {
+        return RefuelingModel(id: id, date: newDate, fuelAmount: newFuelAmount, moneyPaid: newMoneyPaid, distance: newDistance)
     }
 }
