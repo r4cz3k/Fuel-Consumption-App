@@ -13,7 +13,6 @@ struct RefuelingModel: Identifiable, Codable{
     let fuelAmount: Double
     let moneyPaid: Double
     let distance: Double
-
     
     init(id: String = UUID().uuidString, date: Date, fuelAmount: Double, moneyPaid: Double, distance: Double){
         self.id = id

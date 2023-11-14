@@ -42,20 +42,22 @@ struct CarDetailsView: View {
                         .font(.title)
                         .bold()
                     
-                    VStack(alignment: .leading, spacing: 10){
-                        CarInfoRowView(
-                            infoTitle: "Date",
-                            infoData: String(car.refuelingHistory[0].date.formatted(.dateTime.day().month(.wide).year())))
-                        
-                        CarInfoRowView(
-                            infoTitle: "Fuel Amount",
-                            infoData: "\(String(car.refuelingHistory[0].fuelAmount)) L")
-                        
-                        CarInfoRowView(
-                            infoTitle: "Money Amount",
-                            infoData: "\(String(car.refuelingHistory[0].moneyPaid)) PLN")
+                    if(car.refuelingHistory.count > 0){
+                        VStack(alignment: .leading, spacing: 10){
+                            CarInfoRowView(
+                                infoTitle: "Date",
+                                infoData: String(car.refuelingHistory[0].date.formatted(.dateTime.day().month(.wide).year())))
+                            
+                            CarInfoRowView(
+                                infoTitle: "Fuel Amount",
+                                infoData: "\(String(car.refuelingHistory[0].fuelAmount)) L")
+                            
+                            CarInfoRowView(
+                                infoTitle: "Money Amount",
+                                infoData: "\(String(car.refuelingHistory[0].moneyPaid)) PLN")
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
                 }
                 
                 NavigationLink(
@@ -100,5 +102,5 @@ struct CarDetailsView: View {
 }
 
 #Preview {
-    CarDetailsView(carsViewModel: CarsViewModel(),car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 410.75)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4))
+    CarDetailsView(carsViewModel: CarsViewModel(),car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 410.75)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4, fuelTanked: 0.0, moneyPaid: 0.0))
 }

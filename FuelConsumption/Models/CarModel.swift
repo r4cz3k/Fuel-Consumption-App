@@ -27,4 +27,6 @@ struct CarModel: Identifiable, Codable{
     var registrationNumber: String
     var yearOfProduction: Int
     var averageConsumption: Double // App will have three types of average consumption - mpg, kpl, l/100km
+    var fuelTanked: Double
+    var moneyPaid: Double
 }

@@ -30,7 +30,10 @@ class CarsViewModel: ObservableObject{
             refuelingHistory: [],
             registrationNumber: registrationNumber,
             yearOfProduction: yearOfProduction,
-            averageConsumption: 0.0))
+            averageConsumption: 0.0,
+            fuelTanked: 0.0,
+            moneyPaid: 0.0
+        ))
     }
     
     func deleteCar(index: IndexSet){
@@ -61,7 +64,7 @@ class CarsViewModel: ObservableObject{
             if let refuelingIndex = car.refuelingHistory.firstIndex(where: {$0.id == refueling.id}){
                 cars[carIndex].refuelingHistory[refuelingIndex] = refueling.updateRefueling(newDate: newDate, newFuelAmount: newFuelAmount, newMoneyPaid: newMoneyPaid, newDistance: newDistance)
                 sortCarRefuelingHistory(index: carIndex)
-                countAverageConsumption(index: carIndex)
+                countCarStatistics(index: carIndex)
             }
         }
         
@@ -71,7 +74,7 @@ class CarsViewModel: ObservableObject{
         if let index = cars.firstIndex(where: {$0.id == car.id}){
             cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid, distance: distance), at: 0)
             sortCarRefuelingHistory(index: index)
-            countAverageConsumption(index: index)
+            countCarStatistics(index: index)
         }
     }
     
@@ -79,14 +82,19 @@ class CarsViewModel: ObservableObject{
         cars[index].refuelingHistory = cars[index].refuelingHistory.sorted(by: {$0.date.compare($1.date) == .orderedDescending})
     }
     
-    func countAverageConsumption(index: Int) {
+    func countCarStatistics(index: Int) {
         
         var avg: Double = Double()
         
+        cars[index].moneyPaid = 0
+        cars[index].fuelTanked = 0
+        
         for refueling in cars[index].refuelingHistory {
             avg += refueling.fuelAmount / (refueling.distance / 100)
+            cars[index].moneyPaid += refueling.moneyPaid
+            cars[index].fuelTanked += refueling.fuelAmount
         }
         
-        cars[index].averageConsumption = avg
+        cars[index].averageConsumption = (avg / Double(cars[index].refuelingHistory.count))
     }
 }
