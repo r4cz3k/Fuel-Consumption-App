@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddRefuelingView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var carsViewModel: CarsViewModel
     @State var car: CarModel
     
@@ -31,13 +33,15 @@ struct AddRefuelingView: View {
                     .padding()
                     .font(.headline)
                     .frame(maxWidth: .infinity)
+                    .background(colorScheme == .dark ? .white : .black)
+                    .foregroundStyle(colorScheme == .dark ? .black : .white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.addRefueling(car: car, fuelAmount: Double(fuelAmount) ?? 0, moneyPaid: Double(moneyPaid) ?? 0, distance: Double(distance) ?? 0)
+                        carsViewModel.addRefueling(car: car, fuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, moneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, distance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
                     }
             }
             .padding()

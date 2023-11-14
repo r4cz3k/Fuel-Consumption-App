@@ -97,4 +97,10 @@ class CarsViewModel: ObservableObject{
         
         cars[index].averageConsumption = (avg / Double(cars[index].refuelingHistory.count))
     }
+    
+    func deleteRefueling(car: CarModel, index: IndexSet) {
+        if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
+            cars[carIndex].refuelingHistory.remove(atOffsets: index)
+        }
+    }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CarDetailsView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     var carsViewModel: CarsViewModel
     var car: CarModel
     
@@ -74,7 +75,7 @@ struct CarDetailsView: View {
                             )
                     }
                 )
-                    
+                
                 
                 Spacer()
                 
@@ -85,6 +86,8 @@ struct CarDetailsView: View {
                             .padding()
                             .font(.headline)
                             .frame(maxWidth: .infinity)
+                            .background(colorScheme == .dark ? .white : .black)
+                            .foregroundStyle(colorScheme == .dark ? .black : .white)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
@@ -92,8 +95,6 @@ struct CarDetailsView: View {
                             )
                     }
                 )
-                
-                
             }
         }
         .padding()

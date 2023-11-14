@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @State var carsViewModel: CarsViewModel
     
+    @Environment(\.colorScheme) var colorScheme
+    
+    @State var carsViewModel: CarsViewModel
     @State var refueling: RefuelingModel
     @State var car: CarModel
     
@@ -35,13 +37,15 @@ struct HistoryView: View {
                     .padding()
                     .font(.headline)
                     .frame(maxWidth: .infinity)
+                    .background(colorScheme == .dark ? .white : .black)
+                    .foregroundStyle(colorScheme == .dark ? .black : .white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount) ?? 0, newMoneyPaid: Double(moneyPaid) ?? 0, newDistance: Double(distance) ?? 0)
+                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, newMoneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, newDistance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
                     }
             }
             .padding()

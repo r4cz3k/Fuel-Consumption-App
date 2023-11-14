@@ -22,7 +22,7 @@ struct AddCarView: View {
             VStack(alignment: .leading, spacing: 20){
                 AddCarInputView(headline: "Car Brand", bindedText: $carBrand, numKeyboard: false)
                 AddCarInputView(headline: "Car Model", bindedText: $carModel, numKeyboard: false)
-                AddCarInputView(headline: "Registration Number", bindedText: $registrationNumber, numKeyboard: true)
+                AddCarInputView(headline: "Registration Number", bindedText: $registrationNumber, numKeyboard: false)
                 AddCarInputView(headline: "Year Of Production", bindedText: $yearOfProduction, numKeyboard: true)
                 AddCarPickerView(selection: $fuelType)
                 Spacer()

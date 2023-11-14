@@ -31,8 +31,10 @@ struct RefuelingHistoryView: View {
                         label: {
                             RefuelingHistoryRowView(date: refueling.date)
                         })
-                    
                 }
+                .onDelete(perform: { indexSet in
+                    carsViewModel.deleteRefueling(car: car, index: indexSet)
+                })
                 .listRowSeparator(.hidden)
             }
             .listStyle(PlainListStyle())
