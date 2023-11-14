@@ -27,7 +27,7 @@ struct RefuelingHistoryView: View {
             List{
                 ForEach(car.refuelingHistory){ refueling in
                     NavigationLink(
-                        destination: HistoryView(carsViewModel: carsViewModel, refueling: refueling, car: car),
+                        destination: UpdateRefuelingView(carsViewModel: carsViewModel, refueling: refueling, car: car),
                         label: {
                             RefuelingHistoryRowView(date: refueling.date)
                         })

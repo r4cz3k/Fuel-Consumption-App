@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct UpdateRefuelingView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -57,7 +57,7 @@ struct HistoryView: View {
     }
 }
 
-extension HistoryView {
+extension UpdateRefuelingView {
     func getData() {
         if let index = car.refuelingHistory.firstIndex(where: { $0.id == refueling.id}){
             fuelAmount = String(car.refuelingHistory[index].fuelAmount)
@@ -69,5 +69,5 @@ extension HistoryView {
 }
 
 #Preview {
-    HistoryView(carsViewModel: CarsViewModel(), refueling: RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 430.75), car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 430.75), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180, distance: 390.65)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4,  fuelTanked: 0.0, moneyPaid: 0.0))
+    UpdateRefuelingView(carsViewModel: CarsViewModel(), refueling: RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 430.75), car: CarModel(id: UUID().uuidString, carBrand: "Toyota", carModel: "Yaris", fuelType: fuelTypes.gasoline.rawValue, refuelingHistory: [RefuelingModel( date: Date(), fuelAmount: 39, moneyPaid: 190, distance: 430.75), RefuelingModel( date: Date(), fuelAmount: 38, moneyPaid: 180, distance: 390.65)], registrationNumber: "XX1111A", yearOfProduction: 2016, averageConsumption: 5.4,  fuelTanked: 0.0, moneyPaid: 0.0))
 }
