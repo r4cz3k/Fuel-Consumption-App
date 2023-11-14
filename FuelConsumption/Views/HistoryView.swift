@@ -42,7 +42,7 @@ struct HistoryView: View {
                     }
             }
             .padding()
-            .navigationTitle(String(refueling.date.formatted(.dateTime.day().month(.wide).year())))
+            .navigationTitle(String(date.formatted(.dateTime.day().month(.wide).year())))
         }
         .onAppear{
             getData()

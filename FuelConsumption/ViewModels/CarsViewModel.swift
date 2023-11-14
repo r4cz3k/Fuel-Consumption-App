@@ -60,13 +60,20 @@ class CarsViewModel: ObservableObject{
         if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
             if let refuelingIndex = car.refuelingHistory.firstIndex(where: {$0.id == refueling.id}){
                 cars[carIndex].refuelingHistory[refuelingIndex] = refueling.updateRefueling(newDate: newDate, newFuelAmount: newFuelAmount, newMoneyPaid: newMoneyPaid)
+                sortCarRefuelingHistory(index: carIndex)
             }
         }
+        
     }
     
     func addRefueling(car: CarModel, fuelAmount: Double, moneyPaid: Double){
         if let index = cars.firstIndex(where: {$0.id == car.id}){
             cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid), at: 0)
+            sortCarRefuelingHistory(index: index)
         }
+    }
+    
+    func sortCarRefuelingHistory(index: Int) {
+        cars[index].refuelingHistory = cars[index].refuelingHistory.sorted(by: {$0.date.compare($1.date) == .orderedDescending})
     }
 }

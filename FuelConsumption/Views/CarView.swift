@@ -22,7 +22,7 @@ struct CarView: View {
                 Text(String(car.yearOfProduction))
                     .fontWeight(.semibold)
             }
-            .font(.largeTitle)
+            .font(.title)
             
             CarInfoRowView(
                 infoTitle: "Registration Number",
