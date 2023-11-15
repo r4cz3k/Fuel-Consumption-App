@@ -11,7 +11,6 @@ struct TripModel: Identifiable, Codable {
     let id: String
     var title: String
     var participants: [ParticipantModel]
-    var cars: [CarModel]
     var refuelingHistory: [RefuelingModel]
     var moneyPaid: Double
 }

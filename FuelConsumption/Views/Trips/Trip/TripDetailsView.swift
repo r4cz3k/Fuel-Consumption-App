@@ -64,7 +64,7 @@ struct TripDetailsView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: Text("x"),
+                    destination: AddTripRefuelingView(tripsViewModel: tripsViewModel, trip: trip),
                     label: {
                         Text("Add Refueling")
                             .padding()
@@ -86,5 +86,5 @@ struct TripDetailsView: View {
 }
 
 #Preview {
-    TripDetailsView(tripsViewModel: TripsViewModel(), trip: TripModel(id: UUID().uuidString, title: "Trip To Berlin", participants: [], cars: [], refuelingHistory: [], moneyPaid: 10.0))
+    TripDetailsView(tripsViewModel: TripsViewModel(), trip: TripModel(id: UUID().uuidString, title: "Trip To Berlin", participants: [], refuelingHistory: [], moneyPaid: 10.0))
 }

@@ -25,10 +25,6 @@ struct TripRowView: View {
                 InfoRowView(
                     infoTitle: "Participants",
                     infoData: String(trip.participants.count))
-                
-                InfoRowView(
-                    infoTitle: "Cars",
-                    infoData: String(trip.cars.count))
             }
             .padding()
             .frame(maxWidth: .infinity)
@@ -41,5 +37,5 @@ struct TripRowView: View {
 }
 
 #Preview {
-    TripRowView(trip: TripModel(id: UUID().uuidString, title: "Trip to Berlin", participants: [], cars: [], refuelingHistory: [], moneyPaid: 0.0))
+    TripRowView(trip: TripModel(id: UUID().uuidString, title: "Trip to Berlin", participants: [], refuelingHistory: [], moneyPaid: 0.0))
 }

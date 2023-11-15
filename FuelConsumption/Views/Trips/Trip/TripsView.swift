@@ -15,7 +15,12 @@ struct TripsView: View {
         NavigationStack{
             List{
                 ForEach(tripsViewModel.trips){ trip in
-                    TripRowView(trip: trip)
+                    NavigationLink(
+                        destination: TripDetailsView(tripsViewModel: tripsViewModel, trip: trip),
+                        label: {
+                            TripRowView(trip: trip)
+                        }
+                    )
                         .listRowSeparator(.hidden)
                 }
                 .onDelete(perform: tripsViewModel.deleteTrip)

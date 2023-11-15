@@ -17,6 +17,7 @@ struct AddTripRefuelingView: View {
     @State var fuelAmount: String = String()
     @State var moneyPaid: String = String()
     @State var distance: String = String()
+    @State var carID: String = String()
     
     var body: some View {
         NavigationStack{
@@ -26,6 +27,8 @@ struct AddTripRefuelingView: View {
                 InputView(headline: "Money Paid", bindedText: $moneyPaid, numKeyboard: true)
                 
                 InputView(headline: "Distance", bindedText: $distance, numKeyboard: true)
+                
+                AddTripRefuelingPickerView(selection: $carID)
                 
                 Spacer()
                 
@@ -51,5 +54,5 @@ struct AddTripRefuelingView: View {
 }
 
 #Preview {
-    AddTripRefuelingView(tripsViewModel: TripsViewModel(), trip: TripModel(id: UUID().uuidString, title: "Trip To Berlin", participants: [], cars: [], refuelingHistory: [], moneyPaid: 0.0))
+    AddTripRefuelingView(tripsViewModel: TripsViewModel(), trip: TripModel(id: UUID().uuidString, title: "Trip To Berlin", participants: [], refuelingHistory: [], moneyPaid: 0.0))
 }
