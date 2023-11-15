@@ -15,3 +15,21 @@ Basic iOS app that counts average fuel consumption for cars. I tried to learn Us
  - Add Settings tab, where you can select dark, light, custom dark and custom light modes.
 
 ## Screenshots
+
+Cars
+![](Images/CarsView.png)
+
+Add Car
+![](Images/AddCar.png)
+
+Car Details
+![](Images/CarDetailsView.png)
+
+Add Refueling
+![](Images/AddRefueling.png)
+
+Refueling History
+![](Images/RefuelingHistory.png)
+
+Update Refueling
+![](Images/UpdateRefueling.png)
