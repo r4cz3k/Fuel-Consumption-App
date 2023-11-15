@@ -18,6 +18,9 @@ struct AddRefuelingView: View {
     @State var moneyPaid: String = String()
     @State var distance: String = String()
     
+    @State var showAlert: Bool = false
+    @State var showSuccessAlert: Bool = false
+    
     var body: some View {
         NavigationStack{
             VStack(spacing: 20){
@@ -41,11 +44,48 @@ struct AddRefuelingView: View {
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.addRefueling(car: car, fuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, moneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, distance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
+                        if validateInputs(){
+                            carsViewModel.addRefueling(car: car, fuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, moneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, distance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
+                            showSuccessAlert = true
+                        } else {
+                            showAlert = true
+                        }
                     }
             }
             .padding()
             .navigationTitle("Add Refueling")
+        }
+        .alert("Inputs are empty", isPresented: $showAlert) {
+            Button("OK", role: .cancel){}
+        } message: {
+            Text("Please make sure that all input fields are filled")
+        }
+        .alert("Refueling added to history", isPresented: $showSuccessAlert) {
+            Button("OK", role: .cancel){}
+        }
+    }
+}
+
+extension AddRefuelingView {
+    func validateInputs() -> Bool {
+        var correct: Int = 0
+        
+        if fuelAmount.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if moneyPaid.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if distance.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if correct == 3{
+            return true
+        }else{
+            return false
         }
     }
 }

@@ -20,6 +20,9 @@ struct UpdateRefuelingView: View {
     @State var distance: String = String()
     @State var date: Date = Date()
     
+    @State var showAlert: Bool = false
+    @State var showSuccessAlert: Bool = false
+    
     var body: some View {
         NavigationStack{
             VStack(spacing: 20){
@@ -45,11 +48,24 @@ struct UpdateRefuelingView: View {
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, newMoneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, newDistance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
+                        if validateInputs(){
+                            carsViewModel.updateRefueling(car: car, refueling: refueling, newDate: date, newFuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, newMoneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, newDistance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
+                            showSuccessAlert = true
+                        } else {
+                            showAlert = true
+                        }
                     }
             }
             .padding()
             .navigationTitle(String(date.formatted(.dateTime.day().month(.wide).year())))
+        }
+        .alert("Inputs are empty", isPresented: $showAlert) {
+            Button("OK", role: .cancel){}
+        } message: {
+            Text("Please make sure that all input fields are filled")
+        }
+        .alert("Refueling updated", isPresented: $showSuccessAlert) {
+            Button("OK", role: .cancel){}
         }
         .onAppear{
             getData()
@@ -64,6 +80,28 @@ extension UpdateRefuelingView {
             moneyPaid = String(car.refuelingHistory[index].moneyPaid)
             date = car.refuelingHistory[index].date
             distance = String(car.refuelingHistory[index].distance)
+        }
+    }
+    
+    func validateInputs() -> Bool {
+        var correct: Int = 0
+        
+        if fuelAmount.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if moneyPaid.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if distance.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if correct == 3{
+            return true
+        }else{
+            return false
         }
     }
 }

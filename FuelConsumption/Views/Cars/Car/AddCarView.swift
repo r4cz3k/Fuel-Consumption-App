@@ -19,6 +19,9 @@ struct AddCarView: View {
     @State var registrationNumber: String = ""
     @State var yearOfProduction: String = ""
     
+    @State var showAlert: Bool = false
+    @State var showSuccessAlert: Bool = false
+    
     var body: some View {
         ScrollView(showsIndicators: false){
             VStack(alignment: .leading, spacing: 20){
@@ -40,18 +43,65 @@ struct AddCarView: View {
                             .stroke(lineWidth: 2)
                     )
                     .onTapGesture {
-                        carsViewModel.addCar(
-                            carBrand: carBrand,
-                            carModel: carModel,
-                            fuelType: fuelType,
-                            registrationNumber: registrationNumber,
-                            yearOfProduction: Int(yearOfProduction) ?? 2023)
+                        if validateInputs(){
+                            carsViewModel.addCar(
+                                carBrand: carBrand,
+                                carModel: carModel,
+                                fuelType: fuelType,
+                                registrationNumber: registrationNumber,
+                                yearOfProduction: Int(yearOfProduction) ?? 2023)
+                            
+                            showSuccessAlert = true
+                        } else {
+                            showAlert = true
+                        }
                     }
             }
+        }
+        .alert("Inputs are empty", isPresented: $showAlert) {
+            Button("OK", role: .cancel){}
+        } message: {
+            Text("Please make sure that all input fields are filled")
+        }
+        .alert("Car added", isPresented: $showSuccessAlert) {
+            Button("OK", role: .cancel){}
         }
         .padding()
         .padding(.top, -20)
     }
+}
+
+extension AddCarView {
+    func validateInputs() -> Bool {
+        var correct: Int = 0
+        
+        if carBrand.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if carModel.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if fuelType.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if registrationNumber.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if yearOfProduction.replacingOccurrences(of: " ", with: "").count > 0{
+            correct += 1
+        }
+        
+        if correct == 5{
+            return true
+        }else{
+            return false
+        }
+    }
+
 }
 
 #Preview {
