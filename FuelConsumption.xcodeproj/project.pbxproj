@@ -84,9 +84,8 @@
 		C14B46C22B039B1E001108BE /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				C14B46C62B039BD0001108BE /* TripsView.swift */,
-				C14B46D02B03E780001108BE /* TripRowView.swift */,
-				C14B46D42B03EABF001108BE /* TripDetailsView.swift */,
+				C1A735EF2B05038E00118F6F /* Trip */,
+				C1A735F02B05039900118F6F /* Refueling */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -197,6 +196,23 @@
 				C1E9EB2C2AF244D8008065AF /* NavigationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C1A735EF2B05038E00118F6F /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				C14B46C62B039BD0001108BE /* TripsView.swift */,
+				C14B46D02B03E780001108BE /* TripRowView.swift */,
+				C14B46D42B03EABF001108BE /* TripDetailsView.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		C1A735F02B05039900118F6F /* Refueling */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Refueling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
