@@ -10,7 +10,7 @@ import SwiftUI
 struct AddTripRefuelingPickerView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var carsViewModel: CarsViewModel = CarsViewModel()
+    @ObservedObject var carsViewModel: CarsViewModel
     @Binding var selection: String
     
     var body: some View {
@@ -43,5 +43,5 @@ struct AddTripRefuelingPickerView: View {
 }
 
 #Preview {
-    AddTripRefuelingPickerView(selection: Binding<String>.constant(""))
+    AddTripRefuelingPickerView(carsViewModel: CarsViewModel(), selection: Binding<String>.constant(""))
 }

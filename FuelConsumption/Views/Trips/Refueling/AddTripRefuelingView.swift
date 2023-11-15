@@ -11,6 +11,8 @@ struct AddTripRefuelingView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var carsViewModel: CarsViewModel = CarsViewModel()
+    
     @State var tripsViewModel: TripsViewModel
     @State var trip: TripModel
     
@@ -28,7 +30,7 @@ struct AddTripRefuelingView: View {
                 
                 InputView(headline: "Distance", bindedText: $distance, numKeyboard: true)
                 
-                AddTripRefuelingPickerView(selection: $carID)
+                AddTripRefuelingPickerView(carsViewModel: carsViewModel, selection: $carID)
                 
                 Spacer()
                 

@@ -103,4 +103,18 @@ class CarsViewModel: ObservableObject{
             cars[carIndex].refuelingHistory.remove(atOffsets: index)
         }
     }
+    
+    func addRefuelingByRegistrationNumber(registrationNumber: String, fuelAmount: Double, moneyPaid: Double, distance: Double) {
+        if let index = cars.firstIndex(where: {$0.registrationNumber == registrationNumber}) {
+            cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid, distance: distance), at: 0)
+            sortCarRefuelingHistory(index: index)
+            countCarStatistics(index: index)
+        }
+    }
+    
+    func deleteRefuelingByRegistrationNumber(registrationNumber: String, index: IndexSet) {
+        if let carIndex = cars.firstIndex(where: {$0.registrationNumber == registrationNumber}){
+            cars[carIndex].refuelingHistory.remove(atOffsets: index)
+        }
+    }
 }
