@@ -86,5 +86,5 @@ struct TripDetailsView: View {
 }
 
 #Preview {
-    TripDetailsView(tripsViewModel: TripsViewModel(), trip: TripModel(id: UUID().uuidString, title: "Trip To Berlin", participants: [], cars: [], refuelingHistory: [], moneyPaid: 0.0))
+    TripDetailsView(tripsViewModel: TripsViewModel(), trip: TripModel(id: UUID().uuidString, title: "Trip To Berlin", participants: [], cars: [], refuelingHistory: [], moneyPaid: 10.0))
 }
