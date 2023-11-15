@@ -101,6 +101,8 @@ class CarsViewModel: ObservableObject{
     func deleteRefueling(car: CarModel, index: IndexSet) {
         if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
             cars[carIndex].refuelingHistory.remove(atOffsets: index)
+            sortCarRefuelingHistory(index: carIndex)
+            countCarStatistics(index: carIndex)
         }
     }
 }
