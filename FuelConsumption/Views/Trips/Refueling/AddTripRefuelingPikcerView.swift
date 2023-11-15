@@ -1,5 +1,5 @@
 //
-//  AddTripRefuelingPickerView.swift
+//  AddTripRefuelingPikcerView.swift
 //  FuelConsumption
 //
 //  Created by Maciej Rak on 15/11/2023.
@@ -10,19 +10,19 @@ import SwiftUI
 struct AddTripRefuelingPickerView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var carsViewModel: CarsViewModel
     @Binding var selection: String
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Car")
+            Text("Fuel Type")
                 .font(.title2)
                 .fontWeight(.bold)
             Menu{
-                Picker("Car", selection: $selection){
-                    ForEach(carsViewModel.cars){ car in
-                        Text(car.registrationNumber).tag("\(car.carBrand) \(car.carModel)")
-                    }
+                Picker("Fuel Type", selection: $selection){
+                    Text("Gasoline").tag(fuelTypes.gasoline.rawValue.capitalized)
+                    Text("Diesel").tag(fuelTypes.diesel.rawValue.capitalized)
+                    Text("LPG").tag(fuelTypes.lpg.rawValue)
+                    Text("CNG").tag(fuelTypes.cng.rawValue)
                 }
                 .labelsHidden()
                 .pickerStyle(InlinePickerStyle())
@@ -41,7 +41,6 @@ struct AddTripRefuelingPickerView: View {
         }
     }
 }
-
 #Preview {
-    AddTripRefuelingPickerView(carsViewModel: CarsViewModel(), selection: Binding<String>.constant(""))
+    AddTripRefuelingPickerView(selection: Binding<String>.constant(""))
 }

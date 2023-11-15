@@ -21,12 +21,6 @@ struct NavigationView: View {
                         Text("My Cars")
                     }
                 
-                TripsView()
-                    .tabItem{
-                        Image(systemName: "person.3")
-                        Text("Trips")
-                    }
-                
                 Text("Settings")
                     .tabItem{
                         Image(systemName: "gear")

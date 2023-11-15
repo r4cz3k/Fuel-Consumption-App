@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C14180992AFAE59600E4AA5F /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14180982AFAE59600E4AA5F /* CarDetailsView.swift */; };
-		C14B46C72B039BD0001108BE /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B46C62B039BD0001108BE /* TripsView.swift */; };
-		C14B46CB2B039D12001108BE /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B46CA2B039D12001108BE /* TripModel.swift */; };
-		C14B46CD2B03E319001108BE /* ParticipantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B46CC2B03E319001108BE /* ParticipantModel.swift */; };
-		C14B46CF2B03E426001108BE /* TripsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B46CE2B03E426001108BE /* TripsViewModel.swift */; };
-		C14B46D12B03E780001108BE /* TripRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B46D02B03E780001108BE /* TripRowView.swift */; };
-		C14B46D52B03EABF001108BE /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B46D42B03EABF001108BE /* TripDetailsView.swift */; };
 		C155E19E2AFCD17F00F6BC93 /* UpdateRefuelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E19D2AFCD17F00F6BC93 /* UpdateRefuelingView.swift */; };
 		C155E1A22AFCE9EC00F6BC93 /* RefuelingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155E1A12AFCE9EC00F6BC93 /* RefuelingModel.swift */; };
 		C15A743E2AF440B400747603 /* InfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A743D2AF440B400747603 /* InfoRowView.swift */; };
@@ -27,8 +21,6 @@
 		C16A576C2AFC2DB7001050BB /* RefuelingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */; };
 		C16A576E2AFC3D25001050BB /* RefuelingHistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */; };
 		C16BC2672B02D64600942E58 /* AddRefuelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16BC2662B02D64600942E58 /* AddRefuelingView.swift */; };
-		C1A735F22B0503E100118F6F /* AddTripRefuelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A735F12B0503E100118F6F /* AddTripRefuelingView.swift */; };
-		C1A735F42B05053F00118F6F /* AddTripRefuelingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A735F32B05053F00118F6F /* AddTripRefuelingPickerView.swift */; };
 		C1DF135B2AFAAF3C000E8F96 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DF135A2AFAAF3C000E8F96 /* InputView.swift */; };
 		C1DF135D2AFAB284000E8F96 /* AddCarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */; };
 		C1E9EB2D2AF244D8008065AF /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9EB2C2AF244D8008065AF /* NavigationView.swift */; };
@@ -37,12 +29,6 @@
 
 /* Begin PBXFileReference section */
 		C14180982AFAE59600E4AA5F /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
-		C14B46C62B039BD0001108BE /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
-		C14B46CA2B039D12001108BE /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
-		C14B46CC2B03E319001108BE /* ParticipantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantModel.swift; sourceTree = "<group>"; };
-		C14B46CE2B03E426001108BE /* TripsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewModel.swift; sourceTree = "<group>"; };
-		C14B46D02B03E780001108BE /* TripRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRowView.swift; sourceTree = "<group>"; };
-		C14B46D42B03EABF001108BE /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
 		C155E19D2AFCD17F00F6BC93 /* UpdateRefuelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRefuelingView.swift; sourceTree = "<group>"; };
 		C155E1A12AFCE9EC00F6BC93 /* RefuelingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelingModel.swift; sourceTree = "<group>"; };
 		C15A743D2AF440B400747603 /* InfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRowView.swift; sourceTree = "<group>"; };
@@ -57,8 +43,6 @@
 		C16A576B2AFC2DB7001050BB /* RefuelingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelingHistoryView.swift; sourceTree = "<group>"; };
 		C16A576D2AFC3D25001050BB /* RefuelingHistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelingHistoryRowView.swift; sourceTree = "<group>"; };
 		C16BC2662B02D64600942E58 /* AddRefuelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuelingView.swift; sourceTree = "<group>"; };
-		C1A735F12B0503E100118F6F /* AddTripRefuelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripRefuelingView.swift; sourceTree = "<group>"; };
-		C1A735F32B05053F00118F6F /* AddTripRefuelingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripRefuelingPickerView.swift; sourceTree = "<group>"; };
 		C1DF135A2AFAAF3C000E8F96 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		C1DF135C2AFAB284000E8F96 /* AddCarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarPickerView.swift; sourceTree = "<group>"; };
 		C1E9EB2C2AF244D8008065AF /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
@@ -83,15 +67,6 @@
 				C14B46C42B039B4D001108BE /* Car */,
 			);
 			path = Cars;
-			sourceTree = "<group>";
-		};
-		C14B46C22B039B1E001108BE /* Trips */ = {
-			isa = PBXGroup;
-			children = (
-				C1A735EF2B05038E00118F6F /* Trip */,
-				C1A735F02B05039900118F6F /* Refueling */,
-			);
-			path = Trips;
 			sourceTree = "<group>";
 		};
 		C14B46C32B039B29001108BE /* Settings */ = {
@@ -175,8 +150,6 @@
 			children = (
 				C16062FD2AF1288E00D6B14B /* CarModel.swift */,
 				C155E1A12AFCE9EC00F6BC93 /* RefuelingModel.swift */,
-				C14B46CA2B039D12001108BE /* TripModel.swift */,
-				C14B46CC2B03E319001108BE /* ParticipantModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				C16062FB2AF1288500D6B14B /* CarsViewModel.swift */,
-				C14B46CE2B03E426001108BE /* TripsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,31 +166,11 @@
 			isa = PBXGroup;
 			children = (
 				C14B46C32B039B29001108BE /* Settings */,
-				C14B46C22B039B1E001108BE /* Trips */,
 				C14B46C12B039B18001108BE /* Cars */,
 				C14B46D32B03E9BD001108BE /* Components */,
 				C1E9EB2C2AF244D8008065AF /* NavigationView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C1A735EF2B05038E00118F6F /* Trip */ = {
-			isa = PBXGroup;
-			children = (
-				C14B46C62B039BD0001108BE /* TripsView.swift */,
-				C14B46D02B03E780001108BE /* TripRowView.swift */,
-				C14B46D42B03EABF001108BE /* TripDetailsView.swift */,
-			);
-			path = Trip;
-			sourceTree = "<group>";
-		};
-		C1A735F02B05039900118F6F /* Refueling */ = {
-			isa = PBXGroup;
-			children = (
-				C1A735F12B0503E100118F6F /* AddTripRefuelingView.swift */,
-				C1A735F32B05053F00118F6F /* AddTripRefuelingPickerView.swift */,
-			);
-			path = Refueling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,19 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1A735F22B0503E100118F6F /* AddTripRefuelingView.swift in Sources */,
 				C16062FE2AF1288E00D6B14B /* CarModel.swift in Sources */,
 				C16062E72AF126E100D6B14B /* FuelConsumptionApp.swift in Sources */,
-				C14B46CB2B039D12001108BE /* TripModel.swift in Sources */,
 				C1DF135B2AFAAF3C000E8F96 /* InputView.swift in Sources */,
-				C14B46D52B03EABF001108BE /* TripDetailsView.swift in Sources */,
 				C16A576C2AFC2DB7001050BB /* RefuelingHistoryView.swift in Sources */,
-				C14B46CF2B03E426001108BE /* TripsViewModel.swift in Sources */,
-				C14B46D12B03E780001108BE /* TripRowView.swift in Sources */,
 				C16A576E2AFC3D25001050BB /* RefuelingHistoryRowView.swift in Sources */,
-				C1A735F42B05053F00118F6F /* AddTripRefuelingPickerView.swift in Sources */,
 				C14180992AFAE59600E4AA5F /* CarDetailsView.swift in Sources */,
-				C14B46C72B039BD0001108BE /* TripsView.swift in Sources */,
 				C16BC2672B02D64600942E58 /* AddRefuelingView.swift in Sources */,
 				C1DF135D2AFAB284000E8F96 /* AddCarPickerView.swift in Sources */,
 				C155E19E2AFCD17F00F6BC93 /* UpdateRefuelingView.swift in Sources */,
@@ -313,7 +258,6 @@
 				C1E9EB2D2AF244D8008065AF /* NavigationView.swift in Sources */,
 				C1F77EB62AF8CA6E00131363 /* AddCarView.swift in Sources */,
 				C15A743E2AF440B400747603 /* InfoRowView.swift in Sources */,
-				C14B46CD2B03E319001108BE /* ParticipantModel.swift in Sources */,
 				C16062FA2AF1281400D6B14B /* CarsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

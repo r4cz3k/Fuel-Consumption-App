@@ -49,7 +49,7 @@ class CarsViewModel: ObservableObject{
             let data = UserDefaults.standard.data(forKey: carsKey),
             let savedCars = try? JSONDecoder().decode([CarModel].self, from: data)
         else { return }
-
+        
         self.cars = savedCars
     }
     
@@ -58,7 +58,7 @@ class CarsViewModel: ObservableObject{
             UserDefaults.standard.set(encodedData, forKey: carsKey)
         }
     }
-
+    
     func updateRefueling(car: CarModel, refueling: RefuelingModel, newDate: Date, newFuelAmount: Double, newMoneyPaid: Double, newDistance: Double){
         if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
             if let refuelingIndex = car.refuelingHistory.firstIndex(where: {$0.id == refueling.id}){
@@ -100,20 +100,6 @@ class CarsViewModel: ObservableObject{
     
     func deleteRefueling(car: CarModel, index: IndexSet) {
         if let carIndex = cars.firstIndex(where: {$0.id == car.id}){
-            cars[carIndex].refuelingHistory.remove(atOffsets: index)
-        }
-    }
-    
-    func addRefuelingByRegistrationNumber(registrationNumber: String, fuelAmount: Double, moneyPaid: Double, distance: Double) {
-        if let index = cars.firstIndex(where: {$0.registrationNumber == registrationNumber}) {
-            cars[index].refuelingHistory.insert(RefuelingModel(date: Date(), fuelAmount: fuelAmount, moneyPaid: moneyPaid, distance: distance), at: 0)
-            sortCarRefuelingHistory(index: index)
-            countCarStatistics(index: index)
-        }
-    }
-    
-    func deleteRefuelingByRegistrationNumber(registrationNumber: String, index: IndexSet) {
-        if let carIndex = cars.firstIndex(where: {$0.registrationNumber == registrationNumber}){
             cars[carIndex].refuelingHistory.remove(atOffsets: index)
         }
     }
