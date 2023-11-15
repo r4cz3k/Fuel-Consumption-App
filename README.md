@@ -17,7 +17,7 @@ Basic iOS app that counts average fuel consumption for cars. I tried to learn Us
 ## Screenshots
 
 Cars
-![](Images/CarsView.png)
+![](Images/CarsView.png =210x)
 
 Add Car
 ![](Images/AddCar.png)
