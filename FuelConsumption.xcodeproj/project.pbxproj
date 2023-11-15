@@ -69,13 +69,6 @@
 			path = Cars;
 			sourceTree = "<group>";
 		};
-		C14B46C32B039B29001108BE /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		C14B46C42B039B4D001108BE /* Car */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +158,6 @@
 		C16062F62AF1275500D6B14B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C14B46C32B039B29001108BE /* Settings */,
 				C14B46C12B039B18001108BE /* Cars */,
 				C14B46D32B03E9BD001108BE /* Components */,
 				C1E9EB2C2AF244D8008065AF /* NavigationView.swift */,

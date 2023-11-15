@@ -20,12 +20,6 @@ struct NavigationView: View {
                         Image(systemName: "car")
                         Text("My Cars")
                     }
-                
-                Text("Settings")
-                    .tabItem{
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
             }
             .tint(colorScheme == .dark ? .white : .black)
         }
