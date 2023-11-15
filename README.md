@@ -17,19 +17,19 @@ Basic iOS app that counts average fuel consumption for cars. I tried to learn Us
 ## Screenshots
 
 Cars
-![](Images/CarsView.png =210x)
+![](Images/CarsView.png =400x200)
 
 Add Car
-![](Images/AddCar.png)
+![](Images/AddCar.png =400x200)
 
 Car Details
-![](Images/CarDetailsView.png)
+![](Images/CarDetailsView.png =400x200)
 
 Add Refueling
-![](Images/AddRefueling.png)
+![](Images/AddRefueling.png =400x200)
 
 Refueling History
-![](Images/RefuelingHistory.png)
+![](Images/RefuelingHistory.png =400x200)
 
 Update Refueling
-![](Images/UpdateRefueling.png)
+![](Images/UpdateRefueling.png =400x200)
