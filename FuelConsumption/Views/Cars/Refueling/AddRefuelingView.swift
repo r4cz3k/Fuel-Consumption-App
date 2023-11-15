@@ -46,7 +46,10 @@ struct AddRefuelingView: View {
                     .onTapGesture {
                         if validateInputs(){
                             carsViewModel.addRefueling(car: car, fuelAmount: Double(fuelAmount.replacingOccurrences(of: ",", with: ".")) ?? 0, moneyPaid: Double(moneyPaid.replacingOccurrences(of: ",", with: ".")) ?? 0, distance: Double(distance.replacingOccurrences(of: ",", with: ".")) ?? 0)
+                            
                             showSuccessAlert = true
+                            
+                            clearInputs()
                         } else {
                             showAlert = true
                         }
@@ -87,6 +90,12 @@ extension AddRefuelingView {
         }else{
             return false
         }
+    }
+    
+    func clearInputs() {
+        moneyPaid = ""
+        fuelAmount = ""
+        distance = ""
     }
 }
 

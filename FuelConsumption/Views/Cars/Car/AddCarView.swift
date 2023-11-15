@@ -52,6 +52,7 @@ struct AddCarView: View {
                                 yearOfProduction: Int(yearOfProduction) ?? 2023)
                             
                             showSuccessAlert = true
+                            clearInputs()
                         } else {
                             showAlert = true
                         }
@@ -102,6 +103,13 @@ extension AddCarView {
         }
     }
 
+    func clearInputs(){
+        carBrand = ""
+        carModel = ""
+        fuelType = ""
+        registrationNumber = ""
+        yearOfProduction = ""
+    }
 }
 
 #Preview {
